@@ -1,0 +1,220 @@
+/* @import '~antd/dist/antd.css'; */
+
+/*Обнуление*/
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+:focus,
+:active {
+   outline: none;
+}
+
+a:focus,
+a:active {
+   outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+   display: block;
+}
+
+html,
+body {
+   height: 100%;
+   width: 100%;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 14px;
+   font-family:
+         'Roboto',
+         'Oxygen',
+         'Ubuntu',
+         'Helvetica Neue',
+         sans-serif;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+
+input::-ms-clear {
+   display: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
+
+a,
+a:visited {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+ul li {
+   list-style: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: 400;
+}
+
+#root {
+   /* min-height: 100%;
+   display: flex;
+   flex-direction: column; */
+}
+
+
+ /* -----------------   About ------------------ */
+
+ .about {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .about__title{
+    margin-top: 120px;
+    font-size: 48px;
+    font-weight: 700;
+ }
+
+ .about__link{
+    transition: all ease 0.3;
+    text-decoration: underline;
+
+ }
+
+ .about__link:hover{
+   color:#6ab5f7 ;
+   text-decoration: underline;
+ }
+
+ /* --------------------- posts page ------------- */
+
+
+
+  .post__title,
+  .no-todo__title,
+  .post__error,
+  .todo__error,
+  .error__title {
+   /* flex: 1 1 auto; */
+   color: tomato;
+    text-align: center;
+     font-size: 36px;
+     font-weight: 600;
+     margin-top: 50px;
+   }
+
+      .post__form {
+         padding-top: 20px;
+      }
+
+      .post {
+         /* flex : 1 1 auto; */
+      }
+
+      /* main{
+         display: flex;
+         flex:1 1 auto;
+      } */
+
+      .wrapper{
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+      }
+
+
+      /* ------------------- Todo --------------------------- */
+
+
+
+div[data-testid='ball-triangle-loading'] {
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.my-btn__pages{
+   margin: 0px 0px 20px 8px;
+   /* background: rgb(242, 72, 42);
+    */
+    background: rgba(178, 112, 65);
+   font-size: 16px;
+   font-weight: 500;
+
+}
+
+.my-btn__pages:hover{
+    background: rgb(213, 139, 87);
+
+
+}
+
+.page__current {
+    background: rgb(242, 72, 42);
+    transform: scale(1.2);
+    font-weight: 600;
+}
+
+
+.page__wrapper{
+   display: flex;
+   justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

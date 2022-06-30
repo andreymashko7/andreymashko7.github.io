@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import { Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import Todo from "./pages/Todos";
+import Posts from "./pages/Posts";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Error from "./pages/Error";
+import PostIdPage from "./pages/PostIdPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<About />} />
+        <Route exact path="/posts" element={<Posts />} />
+        <Route exact path="/posts/:id" element={<PostIdPage />} />
+        <Route path="todo" element={<Todo />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+      {/* <Footer /> */}
+    </>
   );
 }
 

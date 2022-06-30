@@ -1,0 +1,63 @@
+.todo__title{
+  font-size: 21px;
+
+}
+
+.title-through {
+   text-decoration: line-through;
+}
+
+.todo__list {
+         list-style: none;
+         padding: 8px;
+         overflow: hidden;
+         max-width: 100%;
+         margin: 0 auto;
+         flex-wrap: wrap;
+}
+
+.todo__item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+      border-radius: 2px;
+
+}
+
+.todo__item:not(:last-child){
+   margin-bottom: 15px;
+}
+
+.icon{
+   cursor: pointer;
+   margin-right: 20px;
+}
+
+.icon__remove{
+   fill: red;
+   cursor: pointer;
+}
+
+.icon__remove:hover{
+   fill:rgb(250, 88, 88)
+}
+
+.icon__completed {
+   fill: green;
+}
+
+.icon__inCompleted {
+   fill: red;
+
+}
+
+.icon__completed:hover {
+   fill: rgb(5, 194, 5)
+}
+
+.icon__inCompleted:hover {
+   fill: rgb(250, 88, 88)
+}

@@ -1,0 +1,45 @@
+
+
+
+.post__subtitle {
+   font-size: 28px;
+   font-weight: 500px;
+   color: rgb(7, 6, 6);
+    margin-bottom: 20px;
+}
+
+.post__text{
+   font-size: 18px;
+   color: #ccc;
+
+}
+
+.post__list{
+   padding: 15px 0;
+}
+
+.post__item{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+.post__content{
+   padding-right: 20px;
+
+}
+
+.btn__open {
+   min-width: 76px;
+   background: green;
+   margin-right: 10px;
+}
+
+.btn__open:hover {
+   background-color: rgb(5, 218, 5)
+}

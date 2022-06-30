@@ -1,0 +1,25 @@
+.my__btn {
+   padding: 12px;
+   color: #fff;
+
+   border-radius: 10px;
+   text-transform: uppercase;
+   transition: 0.3s all ease;
+}
+
+.btn__remove{
+   background-color: rgb(198, 5, 5);
+}
+
+.btn__remove:hover{
+background-color: rgba(251, 55, 55, 0.998);;
+}
+
+.btn__create {
+   background-color: green;
+   margin-top: 15px;
+
+}
+.btn__create:hover {
+   background-color: rgb(5, 218, 5)
+}
