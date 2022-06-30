@@ -1,21 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
-import { TodoService } from "./../Api/TodoService";
-import TodoList from "../components/Todo/TodoList/TodoList";
-import TodoForm from "../components/Todo/TodoForm/TodoForm";
-import TodoFilter from "../components/Todo/TodoFilter/TodoFilter";
-import "../styles/styles.css";
-import MyButton from "../components/UI/button/MyButton";
-import Modal from "./../components/UI/MyModal/Modal";
-import { useTodos } from "../hooks/useTodos";
-import { BallTriangle } from "react-loader-spinner";
-import { useFetching } from "./../hooks/useFetching";
-import { getPageCount } from "../utils/pages";
-import { useObserver } from "./../hooks/useObserver";
+import React, { useState, useEffect, useRef } from 'react';
+import { TodoService } from './../Api/TodoService';
+import TodoList from '../components/Todo/TodoList/TodoList';
+import TodoForm from '../components/Todo/TodoForm/TodoForm';
+import TodoFilter from '../components/Todo/TodoFilter/TodoFilter';
+import '../styles/styles.css';
+import MyButton from '../components/UI/button/MyButton';
+import Modal from './../components/UI/MyModal/Modal';
+import { useTodos } from '../hooks/useTodos';
+import { BallTriangle } from 'react-loader-spinner';
+import { useFetching } from './../hooks/useFetching';
+import { getPageCount } from '../utils/pages';
+import { useObserver } from './../hooks/useObserver';
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
-  const [todo, setTodo] = useState({ title: "", completed: false });
-  const [filter, setFilter] = useState({ sort: "", query: "" });
+  const [todo, setTodo] = useState({ title: '', completed: false });
+  const [filter, setFilter] = useState({ sort: '', query: '' });
   const [modal, setModal] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
   const [limit, setLimit] = useState(12);
@@ -27,9 +27,9 @@ const Todos = () => {
 
   const [fetchTodos, isTodoLoading, todoError] = useFetching(
     async (limit, page) => {
-      await TodoService.getAll(limit, page).then((response) => {
+      await TodoService.getAll(limit, page).then(response => {
         setTodos([...todos, ...response.data]);
-        const totalCount = response.headers["x-total-count"];
+        const totalCount = response.headers['x-total-count'];
         setTotalPages(getPageCount(totalCount, limit));
       });
     }
@@ -44,16 +44,16 @@ const Todos = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
-  const removeTodo = (todo) => {
-    setTodos(todos.filter((t) => t.id !== todo.id));
+  const removeTodo = todo => {
+    setTodos(todos.filter(t => t.id !== todo.id));
   };
 
-  const createTodo = (newTodo) => {
+  const createTodo = newTodo => {
     setTodos([...todos, newTodo]);
     setModal(false);
   };
 
-  const toggleChangeCompleted = (todo) => {};
+  const toggleChangeCompleted = todo => {};
 
   return (
     <div className="todo">
@@ -75,7 +75,7 @@ const Todos = () => {
           remove={removeTodo}
           toggle={toggleChangeCompleted}
         />
-        <div ref={lastElement} style={{ height: 20, background: "red" }} />
+        <div ref={lastElement} style={{ height: 1 }} />
 
         {todoError && (
           <p className="todo__error">

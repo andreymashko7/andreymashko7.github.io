@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import PostItem from "../components/Posts/PostItem/PostItem";
-import { PostService } from "./../Api/PostService";
-import PostForm from "../components/Posts/PostForm/PostForm";
-import PostFilter from "./../components/Posts/PostFilter/PostFilter";
-import "../styles/styles.css";
-import Modal from "./../components/UI/MyModal/Modal";
-import MyButton from "../components/UI/button/MyButton";
-import { usePosts } from "../hooks/usePosts.js";
-import { BallTriangle } from "react-loader-spinner";
-import { useFetching } from "../hooks/useFetching";
-import { getPageCount } from "./../utils/pages";
-import Pagination from "../components/UI/pagination/Pagination";
-import PostError from "./../components/Posts/PostError/PostError";
+import React, { useState, useEffect } from 'react';
+import PostItem from '../components/Posts/PostItem/PostItem';
+import { PostService } from './../Api/PostService';
+import PostForm from '../components/Posts/PostForm/PostForm';
+import PostFilter from './../components/Posts/PostFilter/PostFilter';
+import '../styles/styles.css';
+import Modal from './../components/UI/MyModal/Modal';
+import MyButton from '../components/UI/button/MyButton';
+import { usePosts } from '../hooks/usePosts.js';
+import { BallTriangle } from 'react-loader-spinner';
+import { useFetching } from '../hooks/useFetching';
+import { getPageCount } from './../utils/pages';
+import Pagination from '../components/UI/pagination/Pagination';
+import PostError from './../components/Posts/PostError/PostError';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
-  const [filter, setFilter] = useState({ sort: "", query: "" });
+  const [filter, setFilter] = useState({ sort: '', query: '' });
   const [modal, setModal] = useState(false);
   const searchAndSortedPosts = usePosts(posts, filter.sort, filter.query);
   const [totalPages, setTotalPages] = useState(0);
@@ -24,9 +24,9 @@ const Posts = () => {
 
   const [fetchPosts, isPostLoading, postError] = useFetching(
     async (limit, page) => {
-      await PostService.getAll(limit, page).then((response) => {
+      await PostService.getAll(limit, page).then(response => {
         setPosts(response.data);
-        const totalCount = response.headers["x-total-count"];
+        const totalCount = response.headers['x-total-count'];
         setTotalPages(getPageCount(totalCount, limit));
       });
     }
@@ -36,18 +36,18 @@ const Posts = () => {
     fetchPosts(limit, page);
   }, [limit]);
 
-  const changePage = (page) => {
+  const changePage = page => {
     setPage(page);
     fetchPosts(limit, page);
   };
 
-  const createPost = (newPost) => {
+  const createPost = newPost => {
     setPosts([...posts, newPost]);
     setModal(false);
   };
 
-  const removePost = (post) => {
-    setPosts(posts.filter((p) => p.id !== post.id));
+  const removePost = post => {
+    setPosts(posts.filter(p => p.id !== post.id));
   };
 
   return (
